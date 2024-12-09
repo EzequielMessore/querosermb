@@ -1,5 +1,6 @@
 package br.com.messore.tech.exchages.convention.plugins
 
+import br.com.messore.tech.exchages.convention.configs.composeDependencies
 import br.com.messore.tech.exchages.convention.configs.configureKotlinAndroid
 import br.com.messore.tech.exchages.convention.extentions.bundle
 import br.com.messore.tech.exchages.convention.extentions.getAppVersion
@@ -38,15 +39,4 @@ class AndroidApplicationPlugin : Plugin<Project> {
         }
         composeDependencies()
     }
-}
-
-private fun Project.composeDependencies() = dependencies {
-    val compose = libs.bundle("compose")
-    val composeDebug = libs.bundle("compose-debug")
-
-    val bom = libs.library("androidx-compose-bom")
-
-    add("implementation", platform(bom))
-    add("implementation", compose)
-    add("debugImplementation", composeDebug)
 }

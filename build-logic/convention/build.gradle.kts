@@ -21,9 +21,21 @@ gradlePlugin {
             id = "app.android.library"
             implementationClass = "br.com.messore.tech.exchages.convention.plugins.AndroidLibraryPlugin"
         }
-        register("kotlinLibrary") {
-            id = "app.kotlin.library"
-            implementationClass = "br.com.messore.tech.exchages.convention.plugins.KotlinLibraryPlugin"
+        register("composeLibrary") {
+            id = "app.compose.library"
+            implementationClass = "br.com.messore.tech.exchages.convention.plugins.ComposePlugin"
+        }
+        register("jvmLibrary") {
+            id = "app.jvm.library"
+            implementationClass = "br.com.messore.tech.exchages.convention.plugins.JvmLibraryPlugin"
+        }
+        register("feature") {
+            id = "app.feature"
+            implementationClass = "br.com.messore.tech.exchages.convention.plugins.FeaturePlugin"
+        }
+        register("jvmKtor") {
+            id = "app.jvm.ktor"
+            implementationClass = "br.com.messore.tech.exchages.convention.plugins.JvmKtorPlugin"
         }
     }
 }

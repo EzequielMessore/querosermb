@@ -5,6 +5,8 @@ import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.kotlin
 
 class AndroidLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) = target.run {
@@ -15,6 +17,15 @@ class AndroidLibraryPlugin : Plugin<Project> {
 
         extensions.configure<LibraryExtension> {
             configureKotlinAndroid(this)
+
+            defaultConfig {
+                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+                consumerProguardFiles("consumer-rules.pro")
+            }
+        }
+
+        dependencies {
+            "testImplementation"(kotlin("test"))
         }
     }
 }
