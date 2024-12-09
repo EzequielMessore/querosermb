@@ -1,4 +1,4 @@
-package br.com.messore.tech.exchages.ui.theme
+package br.com.messore.tech.exchange.core.presentation.designsystem
 
 import androidx.compose.ui.graphics.Color
 

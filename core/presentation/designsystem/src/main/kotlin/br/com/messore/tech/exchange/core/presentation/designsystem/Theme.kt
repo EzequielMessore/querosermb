@@ -1,6 +1,5 @@
-package br.com.messore.tech.exchages.ui.theme
+package br.com.messore.tech.exchange.core.presentation.designsystem
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
