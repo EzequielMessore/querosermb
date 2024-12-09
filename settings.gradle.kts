@@ -1,3 +1,5 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -22,3 +24,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "Exchages"
 include(":app")
+
+include(
+    ":core:data",
+    ":core:presentation:designsystem",
+    ":core:domain",
+)
