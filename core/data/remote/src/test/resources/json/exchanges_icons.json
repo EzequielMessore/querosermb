@@ -1,0 +1,22 @@
+[
+  {
+    "exchange_id": "LAKEBTC",
+    "url": "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_64/5503eb9673f9437988702f06cbd7072b.png"
+  },
+  {
+    "exchange_id": "APHELION",
+    "url": "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_64/566775b2321842faac5c156dfe81705a.png"
+  },
+  {
+    "exchange_id": "BIT2C",
+    "url": "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_64/189b2497cf3942af8eeacf74e69c87c6.png"
+  },
+  {
+    "exchange_id": "BITFOREX",
+    "url": "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_64/32a3ccb439ba4d20b995fd61194c5e18.png"
+  },
+  {
+    "exchange_id": "BITIBU",
+    "url": "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_64/b90fd7163b184c6fa289a295aa65c2c7.png"
+  }
+]
