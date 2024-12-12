@@ -1,4 +1,4 @@
-package br.com.messore.tech.exchange.core.presentation.designsystem
+package br.com.messore.tech.exchanges.core.presentation.designsystem
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -11,31 +11,34 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = CryptoYellow,
+    secondary = CryptoDarkGray,
+    tertiary = CryptoMediumGray,
+    background = CryptoBackgroundDark,
+    surface = CryptoBackgroundDark,
+    onPrimary = CryptoBackgroundDark,
+    onSecondary = CryptoLightGray,
+    onTertiary = CryptoLightGray,
+    onBackground = CryptoLightGray,
+    onSurface = CryptoLightGray
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = CryptoYellow,
+    secondary = CryptoLightGray,
+    tertiary = CryptoMediumGray,
+    background = CryptoBackgroundLight,
+    surface = CryptoBackgroundLight,
+    onPrimary = CryptoDarkGray,
+    onSecondary = CryptoDarkGray,
+    onTertiary = CryptoDarkGray,
+    onBackground = CryptoDarkGray,
+    onSurface = CryptoDarkGray
 )
 
 @Composable
-fun ExchagesTheme(
+fun ExchangesTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
