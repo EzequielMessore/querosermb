@@ -1,4 +1,4 @@
-package br.com.messore.tech.exchange.core.remote.model
+package br.com.messore.tech.exchanges.core.remote.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

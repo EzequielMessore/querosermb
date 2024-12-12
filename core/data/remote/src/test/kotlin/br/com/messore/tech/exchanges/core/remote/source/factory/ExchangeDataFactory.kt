@@ -1,7 +1,7 @@
-package br.com.messore.tech.exchange.core.remote.source.factory
+package br.com.messore.tech.exchanges.core.remote.source.factory
 
-import br.com.messore.tech.exchange.core.remote.model.Exchange as ExchangeRemote
-import br.com.messore.tech.exchange.core.remote.model.Image as ImageRemote
+import br.com.messore.tech.exchanges.core.remote.model.Exchange as ExchangeRemote
+import br.com.messore.tech.exchanges.core.remote.model.Image as ImageRemote
 
 object ExchangeDataFactory {
     fun createExchangeList(): List<ExchangeRemote> {

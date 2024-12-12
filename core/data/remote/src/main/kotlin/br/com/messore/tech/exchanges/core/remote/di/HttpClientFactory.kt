@@ -1,4 +1,4 @@
-package br.com.messore.tech.exchange.core.remote.di
+package br.com.messore.tech.exchanges.core.remote.di
 
 import br.com.messore.tech.exchanges.core.domain.config.ApiConfig
 import io.ktor.client.HttpClient

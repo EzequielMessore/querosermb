@@ -1,4 +1,4 @@
-package br.com.messore.tech.exchange.core.remote.util
+package br.com.messore.tech.exchanges.core.remote.util
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine

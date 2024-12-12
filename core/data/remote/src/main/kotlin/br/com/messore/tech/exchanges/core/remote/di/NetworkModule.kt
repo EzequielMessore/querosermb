@@ -1,10 +1,10 @@
-package br.com.messore.tech.exchange.core.remote.di
+package br.com.messore.tech.exchanges.core.remote.di
 
-import br.com.messore.tech.exchange.core.data.source.ExchangeDataSource
+import br.com.messore.tech.exchanges.core.data.source.ExchangeDataSource
 import br.com.messore.tech.exchanges.core.domain.config.ApiConfig
-import br.com.messore.tech.exchange.core.remote.api.ExchangeApi
-import br.com.messore.tech.exchange.core.remote.service.ExchangeService
-import br.com.messore.tech.exchange.core.remote.source.ExchangeDataSourceRemote
+import br.com.messore.tech.exchanges.core.remote.api.ExchangeApi
+import br.com.messore.tech.exchanges.core.remote.service.ExchangeService
+import br.com.messore.tech.exchanges.core.remote.source.ExchangeDataSourceRemote
 import io.ktor.client.HttpClient
 import org.koin.core.annotation.Module
 import org.koin.core.annotation.Single
