@@ -1,6 +1,6 @@
 package br.com.messore.tech.exchange.core.remote.di
 
-import br.com.messore.tech.exchange.core.domain.config.ApiConfig
+import br.com.messore.tech.exchanges.core.domain.config.ApiConfig
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation

@@ -1,7 +1,7 @@
 package br.com.messore.tech.exchange.core.remote.source
 
 import br.com.messore.tech.exchange.core.data.source.ExchangeDataSource
-import br.com.messore.tech.exchange.core.domain.model.Exchange
+import br.com.messore.tech.exchanges.core.domain.model.Exchange
 import br.com.messore.tech.exchange.core.remote.service.ExchangeService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

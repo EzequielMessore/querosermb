@@ -1,4 +1,4 @@
-package br.com.messore.tech.exchange.core.domain.model
+package br.com.messore.tech.exchanges.core.domain.model
 
 import java.text.NumberFormat
 import java.util.Locale

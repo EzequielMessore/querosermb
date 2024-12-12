@@ -1,4 +1,4 @@
-package br.com.messore.tech.exchange.core.domain.config
+package br.com.messore.tech.exchanges.core.domain.config
 
 interface ApiConfig {
     val url: String

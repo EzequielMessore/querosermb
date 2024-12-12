@@ -1,7 +1,7 @@
 package br.com.messore.tech.exchange.core.remote.di
 
 import br.com.messore.tech.exchange.core.data.source.ExchangeDataSource
-import br.com.messore.tech.exchange.core.domain.config.ApiConfig
+import br.com.messore.tech.exchanges.core.domain.config.ApiConfig
 import br.com.messore.tech.exchange.core.remote.api.ExchangeApi
 import br.com.messore.tech.exchange.core.remote.service.ExchangeService
 import br.com.messore.tech.exchange.core.remote.source.ExchangeDataSourceRemote

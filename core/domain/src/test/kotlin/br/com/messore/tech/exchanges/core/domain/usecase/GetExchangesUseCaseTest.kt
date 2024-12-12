@@ -1,7 +1,7 @@
-package br.com.messore.tech.exchange.core.domain.usecase
+package br.com.messore.tech.exchanges.core.domain.usecase
 
-import br.com.messore.tech.exchange.core.domain.model.Exchange
-import br.com.messore.tech.exchange.core.domain.repository.ExchangeRepository
+import br.com.messore.tech.exchanges.core.domain.model.Exchange
+import br.com.messore.tech.exchanges.core.domain.repository.ExchangeRepository
 import br.com.messore.tech.exchanges.testing.ExchangeDataFactory
 import io.mockk.coEvery
 import io.mockk.coVerify

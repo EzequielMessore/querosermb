@@ -1,6 +1,6 @@
 package br.com.messore.tech.exchange.core.remote.source
 
-import br.com.messore.tech.exchange.core.domain.model.Exchange
+import br.com.messore.tech.exchanges.core.domain.model.Exchange
 import br.com.messore.tech.exchange.core.remote.service.ExchangeService
 import br.com.messore.tech.exchange.core.remote.source.factory.ExchangeDataFactory.createExchangeList
 import br.com.messore.tech.exchange.core.remote.source.factory.ExchangeDataFactory.createImageList

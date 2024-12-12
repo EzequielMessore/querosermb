@@ -1,7 +1,7 @@
-package br.com.messore.tech.exchange.core.domain.di
+package br.com.messore.tech.exchanges.core.domain.di
 
-import br.com.messore.tech.exchange.core.domain.repository.ExchangeRepository
-import br.com.messore.tech.exchange.core.domain.usecase.GetExchangesUseCase
+import br.com.messore.tech.exchanges.core.domain.repository.ExchangeRepository
+import br.com.messore.tech.exchanges.core.domain.usecase.GetExchangesUseCase
 import org.koin.core.annotation.Module
 import org.koin.core.annotation.Single
 

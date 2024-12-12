@@ -1,6 +1,6 @@
-package br.com.messore.tech.exchange.core.domain.usecase
+package br.com.messore.tech.exchanges.core.domain.usecase
 
-import br.com.messore.tech.exchange.core.domain.repository.ExchangeRepository
+import br.com.messore.tech.exchanges.core.domain.repository.ExchangeRepository
 
 class GetExchangesUseCase(
     private val repository: ExchangeRepository,
