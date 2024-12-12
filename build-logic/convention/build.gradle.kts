@@ -5,10 +5,10 @@ plugins {
 group = "br.com.messore.tech.exchages.build.logic"
 
 dependencies {
-    compileOnly(gradleApi())
     compileOnly(libs.kotlin.gradlePlugin)
-    compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.android.tools.common)
+    compileOnly(libs.android.gradlePlugin)
+    compileOnly(libs.ksp.gradlePlugin)
 }
 
 gradlePlugin {

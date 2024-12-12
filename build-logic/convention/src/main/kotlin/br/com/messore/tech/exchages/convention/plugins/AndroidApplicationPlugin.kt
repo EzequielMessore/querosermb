@@ -2,15 +2,12 @@ package br.com.messore.tech.exchages.convention.plugins
 
 import br.com.messore.tech.exchages.convention.configs.composeDependencies
 import br.com.messore.tech.exchages.convention.configs.configureKotlinAndroid
-import br.com.messore.tech.exchages.convention.extentions.bundle
 import br.com.messore.tech.exchages.convention.extentions.getAppVersion
-import br.com.messore.tech.exchages.convention.extentions.library
 import br.com.messore.tech.exchages.convention.extentions.libs
 import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.dependencies
 
 class AndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) = target.run {

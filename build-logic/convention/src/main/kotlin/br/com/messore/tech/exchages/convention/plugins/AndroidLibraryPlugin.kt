@@ -16,6 +16,7 @@ class AndroidLibraryPlugin : Plugin<Project> {
         }
 
         extensions.configure<LibraryExtension> {
+            namespace = "br.com.messore.tech.exchages${project.path.replace(":", ".").replace("-", "_")}"
             configureKotlinAndroid(this)
 
             defaultConfig {

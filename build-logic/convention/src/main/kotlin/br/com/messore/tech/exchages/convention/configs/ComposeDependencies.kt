@@ -11,7 +11,7 @@ fun Project.composeDependencies() = dependencies {
     val bom = libs.library("androidx-compose-bom")
     val composeDebug = libs.bundle("compose-debug")
 
-    add("implementation", platform(bom))
-    add("implementation", compose)
-    add("debugImplementation", composeDebug)
+    "implementation"(platform(bom))
+    "implementation"(compose)
+    "debugImplementation"(composeDebug)
 }
