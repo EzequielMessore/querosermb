@@ -7,6 +7,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import br.com.messore.tech.exchanges.core.domain.model.Exchange
+import br.com.messore.tech.exchanges.core.presentation.designsystem.components.ScreenLoadingTag
 import br.com.messore.tech.exchanges.features.exchanges.ui.ExchangeScreen
 import br.com.messore.tech.exchanges.features.exchanges.viewmodel.ExchangeUiAction
 import br.com.messore.tech.exchanges.features.exchanges.viewmodel.ExchangeUiState
@@ -18,7 +19,6 @@ class ExchangeScreenTest {
     @get:Rule
     val composeTestRule = createComposeRule()
 
-    // Teste de Exibição de Carregamento (Loading)
     @Test
     fun shouldDisplayLoadingWhenDataIsBeingFetched() {
         val exchanges = createExchangeList()
@@ -35,10 +35,9 @@ class ExchangeScreenTest {
             )
         }
 
-        composeTestRule.onNodeWithTag("loading").assertIsDisplayed()
+        composeTestRule.onNodeWithTag(ScreenLoadingTag).assertIsDisplayed()
     }
 
-    // 2. Teste de Exibição de Resultados após Carregamento
     @Test
     fun shouldDisplayExchangesAfterLoading() {
         val exchanges = createExchangeList()
@@ -58,7 +57,6 @@ class ExchangeScreenTest {
         composeTestRule.onNodeWithText("Kraken").assertIsDisplayed()
     }
 
-    // 3. Teste de Filtragem de Exchanges pelo Nome
      @Test
     fun shouldFilterExchangesBasedOnSearchTerm() {
         val exchanges = createExchangeList()
@@ -84,7 +82,6 @@ class ExchangeScreenTest {
         composeTestRule.onNodeWithText("Kraken").assertDoesNotExist()
     }
 
-    // 4. Teste de Ação de Limpeza da Busca (Search Clear)
     @Test
     fun shouldClearSearchTermWhenClearIconIsClicked() {
         val exchanges = createExchangeList()
