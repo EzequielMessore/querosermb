@@ -10,6 +10,10 @@ import org.koin.core.annotation.Single
 class DataModule {
     @Single
     fun providesExchangeRepository(
-        dataSource: ExchangeDataSource.Remote,
-    ): ExchangeRepository = ExchangeRepositoryImpl(remoteDataSource = dataSource)
+        localSource: ExchangeDataSource.Local,
+        remoteSource: ExchangeDataSource.Remote,
+    ): ExchangeRepository = ExchangeRepositoryImpl(
+        localDataSource = localSource,
+        remoteDataSource = remoteSource,
+    )
 }
