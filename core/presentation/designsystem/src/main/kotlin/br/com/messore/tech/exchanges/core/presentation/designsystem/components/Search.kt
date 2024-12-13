@@ -1,5 +1,6 @@
 package br.com.messore.tech.exchanges.core.presentation.designsystem.components
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -20,10 +21,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.messore.tech.exchanges.core.presentation.designsystem.ExchangesTheme
+
+@VisibleForTesting
+const val SearchTag = "Search"
 
 @Composable
 fun Search(
@@ -40,6 +45,7 @@ fun Search(
     OutlinedTextField(
         modifier = modifier
             .fillMaxWidth()
+            .testTag(SearchTag)
             .background(
                 color = MaterialTheme.colorScheme.surface,
                 shape = RoundedCornerShape(size = 10.dp)
@@ -62,7 +68,7 @@ fun Search(
                     onClick = { onClearTextClicked("") },
                     interactionSource = interactionSource,
                 ),
-                contentDescription = null,
+                contentDescription = if (value.isEmpty()) "Search Icon" else "Close Icon",
                 imageVector = if (value.isEmpty()) Icons.Default.Search else Icons.Default.Close,
                 tint = MaterialTheme.colorScheme.primary,
             )

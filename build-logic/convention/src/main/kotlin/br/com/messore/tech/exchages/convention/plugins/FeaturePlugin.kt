@@ -28,6 +28,8 @@ class FeaturePlugin : Plugin<Project> {
                 "implementation"(libs.bundle("koin"))
                 "implementation"(libs.bundle("koin-android"))
                 "ksp"(libs.findLibrary("koin-ksp-compiler").get())
+
+                "androidTestImplementation"(libs.library("testing-ui-test-junit4"))
             }
             composeDependencies()
         }
