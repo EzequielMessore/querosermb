@@ -88,4 +88,52 @@ class ExchangeRepositoryImplTest {
         coVerify(exactly = 1) { localDataSource.getCachedImages() }
         coVerify(exactly = 1) { remoteDataSource.getExchanges() }
     }
+
+    @Test
+    fun `getExchangeById should return exchange with cached image`() = runTest {
+        val exchange = ExchangeDataFactory.createExchangeById("BINANCE")
+        val images = ExchangeDataFactory.createImageList()
+
+        coEvery { localDataSource.hasCacheValid() } returns true
+        coEvery { localDataSource.getCachedImages() } returns images
+        coEvery { remoteDataSource.getExchangeById("BINANCE") } returns exchange
+
+        val result = repository.getExchangeById("BINANCE")
+
+        val expected = exchange.copy(image = images.find { it.exchangeId == exchange.exchangeId }?.url.orEmpty())
+        assertEquals(expected, result)
+        coVerify(exactly = 1) { localDataSource.hasCacheValid() }
+        coVerify(exactly = 1) { localDataSource.getCachedImages() }
+        coVerify(exactly = 1) { remoteDataSource.getExchangeById("BINANCE") }
+    }
+
+    @Test
+    fun `getExchangeById should return exchange without image when getImagesExchange fails`() = runTest {
+        val exchange = ExchangeDataFactory.createExchangeById("BINANCE")
+        coEvery { localDataSource.hasCacheValid() } returns false
+        coEvery { remoteDataSource.getImagesExchange() } throws RuntimeException("Failed to fetch images")
+        coEvery { remoteDataSource.getExchangeById("BINANCE") } returns exchange
+
+        val result = repository.getExchangeById("BINANCE")
+
+        val expected = exchange.copy(image = "")
+        assertEquals(expected, result)
+        coVerify(exactly = 1) { localDataSource.hasCacheValid() }
+        coVerify(exactly = 1) { remoteDataSource.getImagesExchange() }
+        coVerify(exactly = 1) { remoteDataSource.getExchangeById("BINANCE") }
+    }
+
+    @Test
+    fun `getExchangeById should throw exception when remote getExchangeById fails`() = runTest {
+        coEvery { localDataSource.hasCacheValid() } returns true
+        coEvery { localDataSource.getCachedImages() } returns ExchangeDataFactory.createImageList()
+        coEvery { remoteDataSource.getExchangeById("BINANCE") } throws RuntimeException("Failed to fetch exchange")
+
+        assertFailsWith<RuntimeException>("Failed to fetch exchange") {
+            repository.getExchangeById("BINANCE")
+        }
+        coVerify(exactly = 1) { localDataSource.hasCacheValid() }
+        coVerify(exactly = 1) { localDataSource.getCachedImages() }
+        coVerify(exactly = 1) { remoteDataSource.getExchangeById("BINANCE") }
+    }
 }

@@ -7,8 +7,9 @@ interface ExchangeDataSource {
     interface Remote : ExchangeDataSource {
         suspend fun getExchanges(): List<Exchange>
         suspend fun getImagesExchange(): List<Image>
+        suspend fun getExchangeById(id: String): Exchange
     }
-    // armazenar o cache de imagem local
+
     interface Local : ExchangeDataSource {
         suspend fun hasCacheValid(): Boolean
         suspend fun getCachedImages(): List<Image>
