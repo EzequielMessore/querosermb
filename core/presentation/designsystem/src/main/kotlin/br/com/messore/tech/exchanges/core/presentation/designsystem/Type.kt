@@ -6,7 +6,6 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import br.com.messore.tech.exchange.core.presentation.designsystem.R
 
 val DefaultFont = FontFamily(
     Font(

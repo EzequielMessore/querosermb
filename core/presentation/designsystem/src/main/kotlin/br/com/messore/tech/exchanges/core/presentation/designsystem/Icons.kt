@@ -5,7 +5,6 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.vectorResource
-import br.com.messore.tech.exchange.core.presentation.designsystem.R
 
 @Composable
 fun ImageVector.asPainter(): Painter {
@@ -19,3 +18,7 @@ val CurrencyExchange: ImageVector
 val NavigationIcon: ImageVector
     @Composable
     get() = ImageVector.vectorResource(id = R.drawable.arrow_left)
+
+val LinkIcon: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(id = R.drawable.link)
