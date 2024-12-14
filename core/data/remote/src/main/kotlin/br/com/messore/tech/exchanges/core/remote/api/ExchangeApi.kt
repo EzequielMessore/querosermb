@@ -6,6 +6,7 @@ import br.com.messore.tech.exchanges.core.remote.service.ExchangeService
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
+import io.ktor.client.request.parameter
 import io.ktor.http.path
 
 internal class ExchangeApi(
@@ -16,7 +17,7 @@ internal class ExchangeApi(
             url {
                 path("exchanges")
             }
-        }.body<List<Exchange>>()
+        }.body()
     }
 
     override suspend fun getExchangesImages(): List<Image> {
@@ -24,6 +25,15 @@ internal class ExchangeApi(
             url {
                 path("exchanges/icons/64")
             }
-        }.body<List<Image>>()
+        }.body()
+    }
+
+    override suspend fun getExchangeById(id: String): Exchange {
+        return httpClient.get {
+            url {
+                path("exchanges")
+                parameter("filter_exchange_id", id)
+            }
+        }.body<List<Exchange>>().first()
     }
 }

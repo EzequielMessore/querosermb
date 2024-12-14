@@ -6,4 +6,5 @@ import br.com.messore.tech.exchanges.core.remote.model.Image
 interface ExchangeService {
     suspend fun getExchanges(): List<Exchange>
     suspend fun getExchangesImages(): List<Image>
+    suspend fun getExchangeById(id: String): Exchange
 }

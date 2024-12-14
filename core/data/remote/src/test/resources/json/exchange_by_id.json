@@ -1,0 +1,18 @@
+[
+  {
+    "exchange_id": "BINANCE",
+    "website": "https://www.binance.com/",
+    "name": "Binance",
+    "data_quote_start": "2017-12-18T00:00:00.0000000Z",
+    "data_quote_end": "2024-12-10T00:00:00.0000000Z",
+    "data_orderbook_start": "2017-12-18T21:50:58.3910192Z",
+    "data_orderbook_end": "2023-07-07T00:00:00.0000000Z",
+    "data_trade_start": "2017-07-14T00:00:00.0000000Z",
+    "data_trade_end": "2024-12-10T00:00:00.0000000Z",
+    "data_symbols_count": 2821,
+    "volume_1hrs_usd": 128855794.37,
+    "volume_1day_usd": 29497214160.58,
+    "volume_1mth_usd": 1234297742912.71,
+    "rank": 2
+  }
+]

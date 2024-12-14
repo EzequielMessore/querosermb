@@ -42,4 +42,20 @@ class ExchangeApiTest {
             assertTrue(it.isNotEmpty())
         }
     }
+
+    @Test
+    fun `test getExchangeById returns exchange with image`() = runTest {
+        val mockEngine = MockEngine { request ->
+            assertEquals(request.url.encodedPath, "/exchanges")
+            assertEquals(request.url.parameters["filter_exchange_id"], "BINANCE")
+            assertEquals(request.headers["X-CoinAPI-Key"], "API_KEY")
+
+            respondSuccess(loadJson("exchange_by_id.json").orEmpty())
+        }
+
+        ExchangeApi(HttpClientMock(mockEngine).httpClient).getExchangeById("BINANCE").also {
+            assertNotNull(it)
+            assertEquals(it.exchangeId, "BINANCE")
+        }
+    }
 }
