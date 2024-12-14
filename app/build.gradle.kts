@@ -48,8 +48,8 @@ dependencies {
     implementation(projects.data.data)
     implementation(projects.data.local)
     implementation(projects.data.remote)
-    implementation(projects.core.domain)
-    implementation(projects.core.presentation.designsystem)
+    implementation(projects.domain)
+    implementation(projects.presentation.designsystem)
     implementation(projects.core.viewModel)
     implementation(projects.core.navigation)
 

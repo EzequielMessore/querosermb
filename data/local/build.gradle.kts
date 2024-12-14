@@ -6,7 +6,7 @@ plugins {
 
 dependencies {
     implementation(projects.data.data)
-    implementation(projects.core.domain)
+    implementation(projects.domain)
     implementation(libs.androidx.datastore.preferences)
 
     ksp(libs.koin.ksp.compiler)

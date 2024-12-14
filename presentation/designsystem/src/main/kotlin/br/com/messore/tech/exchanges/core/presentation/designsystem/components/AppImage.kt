@@ -5,8 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import br.com.messore.tech.exchanges.core.presentation.designsystem.R
 import br.com.messore.tech.exchanges.core.presentation.designsystem.ExchangesTheme
+import br.com.messore.tech.exchanges.presentation.designsystem.R
 import coil.compose.rememberAsyncImagePainter
 import coil.request.CachePolicy
 import coil.request.ImageRequest

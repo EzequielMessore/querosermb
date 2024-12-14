@@ -21,10 +21,10 @@ class FeaturePlugin : Plugin<Project> {
             }
 
             dependencies {
-                "implementation"(project(":core:domain"))
+                "implementation"(project(":domain"))
                 "implementation"(project(":core:view-model"))
                 "implementation"(project(":core:navigation"))
-                "implementation"(project(":core:presentation:designsystem"))
+                "implementation"(project(":presentation:designsystem"))
                 "implementation"(libs.library("ktor-serialization-kotlinx-json"))
 
                 "implementation"(libs.bundle("koin"))

@@ -29,12 +29,12 @@ include(
     ":data:data",
     ":data:local",
     ":data:remote",
+    ":domain",
+    ":presentation:designsystem",
 )
 
 include(
-    ":core:domain",
     ":core:navigation",
-    ":core:presentation:designsystem",
     ":core:view-model",
     ":core:testing",
 )

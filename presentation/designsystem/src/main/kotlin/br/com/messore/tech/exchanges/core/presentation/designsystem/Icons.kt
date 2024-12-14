@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.vectorResource
+import br.com.messore.tech.exchanges.presentation.designsystem.R
 
 @Composable
 fun ImageVector.asPainter(): Painter {

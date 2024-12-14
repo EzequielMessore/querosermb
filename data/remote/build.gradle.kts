@@ -5,5 +5,5 @@ plugins {
 
 dependencies {
     implementation(projects.data.data)
-    implementation(projects.core.domain)
+    implementation(projects.domain)
 }
