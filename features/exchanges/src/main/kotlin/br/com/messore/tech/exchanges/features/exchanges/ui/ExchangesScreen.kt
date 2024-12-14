@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.messore.tech.exchanges.core.domain.extension.formatCurrency
 import br.com.messore.tech.exchanges.core.domain.model.Exchange
 import br.com.messore.tech.exchanges.core.presentation.designsystem.ExchangesTheme
 import br.com.messore.tech.exchanges.core.presentation.designsystem.components.AppImage
@@ -126,7 +127,7 @@ fun ExchangeItem(
                         .padding(end = 8.dp)
                         .align(Alignment.End),
                     maxLines = 1,
-                    text = exchange.formattedVolume,
+                    text = exchange.volume1DayUsd.formatCurrency(),
                     style = MaterialTheme.typography.labelMedium.copy(
                         fontWeight = FontWeight.Medium,
                         textAlign = TextAlign.End,
@@ -152,13 +153,17 @@ private fun ExchangeScreenPreview() {
                         name = "Binance",
                         website = "https://www.binance.com/",
                         exchangeId = "BINANCE",
+                        volume1HourUsd = 1361461136.3,
                         volume1DayUsd = 29497214160.58,
+                        volume1MonthUsd = 1178683342003.13,
                     ),
                     Exchange(
                         name = "Kraken",
                         website = "https://www.kraken.com/",
                         exchangeId = "KRAKEN",
                         volume1DayUsd = 1966886113.43,
+                        volume1HourUsd = 1361461136.3,
+                        volume1MonthUsd = 1178683342003.13,
                     ),
                 ),
             ),

@@ -38,13 +38,23 @@ class ExchangeViewModel(
                 _state.update { it.copy(loading = false, exchanges = exchanges) }
             },
             onFailure = {
-                _state.update { it.copy(loading = false) }
+                _state.update {
+                    it.copy(
+                        loading = false,
+                        hasError = true,
+                    )
+                }
             },
         )
     }
 
     fun onAction(action: ExchangeUiAction) {
         when (action) {
+            ExchangeUiAction.Retry -> {
+                _state.update { it.copy(hasError = false) }
+                getExchanges()
+            }
+
             is ExchangeUiAction.SelectExchange -> Unit
             is ExchangeUiAction.OnSearchTermChange -> {
                 when {
@@ -65,13 +75,15 @@ class ExchangeViewModel(
 }
 
 data class ExchangeUiState(
-    val loading: Boolean = false,
     val searchTerm: String = "",
+    val loading: Boolean = false,
+    val hasError: Boolean = false,
     val exchanges: List<Exchange> = emptyList(),
     val filteredExchanges: List<Exchange> = emptyList(),
 )
 
 sealed interface ExchangeUiAction {
+    data object Retry : ExchangeUiAction
     data class SelectExchange(val exchange: Exchange) : ExchangeUiAction
     data class OnSearchTermChange(val searchTerm: String) : ExchangeUiAction
 }
