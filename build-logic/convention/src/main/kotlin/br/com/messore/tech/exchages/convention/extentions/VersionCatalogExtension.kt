@@ -1,7 +1,7 @@
 package br.com.messore.tech.exchages.convention.extentions
 
-import com.android.build.api.dsl.CommonExtension
 import br.com.messore.tech.exchages.convention.model.AppVersion
+import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension

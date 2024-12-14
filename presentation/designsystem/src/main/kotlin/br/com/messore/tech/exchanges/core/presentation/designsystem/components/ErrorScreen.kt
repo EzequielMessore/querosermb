@@ -11,7 +11,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -42,7 +41,7 @@ fun ErrorScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFF0F0F0)),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         ConstraintLayout(
             constraintSet = ConstraintSet {
@@ -76,7 +75,7 @@ fun ErrorScreen(
             onDismiss?.let {
                 IconButton(
                     onClick = it,
-                    modifier = Modifier.layoutId("closeButton")
+                    modifier = Modifier.layoutId("closeButton"),
                 ) {
                     Icon(
                         contentDescription = "close error dialog",
@@ -98,7 +97,7 @@ fun ErrorScreen(
                     onClick = primaryButton.onClick,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .layoutId("primaryButton")
+                        .layoutId("primaryButton"),
                 ) {
                     Text(
                         text = primaryButton.text,

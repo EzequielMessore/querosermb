@@ -8,15 +8,15 @@ import br.com.messore.tech.exchanges.testing.ExchangeDataFactory.createImageList
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.runTest
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 
 class ExchangeDataSourceLocalTest {
 
@@ -28,7 +28,7 @@ class ExchangeDataSourceLocalTest {
             mockk {
                 every { get(longPreferencesKey("cache_time")) } returns cacheTime
                 every { get(stringPreferencesKey("image_exchange_json")) } returns json
-            }
+            },
         )
     }
 

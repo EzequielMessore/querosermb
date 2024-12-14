@@ -19,7 +19,9 @@ import okhttp3.Headers
  * @param imageUrl The URL of the image to load.
  * @param contentDescription The content description for the image.
  *
- * @see <a href="https://stackoverflow.com/a/78647122/5140172">Image is not displayed with Coil's rememberAsyncImagePainter</a>
+ * @see <a href="https://stackoverflow.com/a/78647122/5140172">
+ *           Image is not displayed with Coil's rememberAsyncImagePainter
+ *     </a>
  */
 @Composable
 fun AppImage(
@@ -51,7 +53,8 @@ private fun AppImagePreview() {
     ExchangesTheme {
         AppImage(
             contentDescription = "Currency Exchange",
-            imageUrl = "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_64/5fbfbd742fb64c67a3963ebd7265f9f3.png"
+            imageUrl = "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons" +
+                "/type-id/png_64/5fbfbd742fb64c67a3963ebd7265f9f3.png",
         )
     }
 }

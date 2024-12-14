@@ -3,13 +3,12 @@ package br.com.messore.tech.exchanges.core.remote.api
 import br.com.messore.tech.exchanges.core.remote.util.HttpClientMock
 import br.com.messore.tech.exchanges.core.remote.util.loadJson
 import br.com.messore.tech.exchanges.core.remote.util.respondSuccess
-import br.com.messore.tech.exchanges.core.remote.api.ExchangeApi
 import io.ktor.client.engine.mock.MockEngine
+import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
-import kotlinx.coroutines.test.runTest
 
 class ExchangeApiTest {
 

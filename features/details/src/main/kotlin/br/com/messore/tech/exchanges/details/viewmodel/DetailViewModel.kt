@@ -48,7 +48,6 @@ class DetailViewModel(
             },
         )
     }
-
 }
 
 data class DetailUiState(

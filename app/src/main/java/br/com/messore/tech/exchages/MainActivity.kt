@@ -9,14 +9,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.window.DialogProperties
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
 import br.com.messore.tech.exchanges.core.presentation.designsystem.ExchangesTheme
-import br.com.messore.tech.exchanges.core.presentation.designsystem.components.Button
-import br.com.messore.tech.exchanges.core.presentation.designsystem.components.ErrorScreen
 import br.com.messore.tech.exchanges.details.DetailRoute
 import br.com.messore.tech.exchanges.features.exchanges.ExchangeRoute
 import br.com.messore.tech.exchanges.navigation.Routes
@@ -47,7 +43,7 @@ private fun AppNavHost() {
         }
         composable<Routes.ExchangeDetail> {
             DetailRoute(
-                onBackPressed = navController::popBackStack
+                onBackPressed = navController::popBackStack,
             )
         }
     }

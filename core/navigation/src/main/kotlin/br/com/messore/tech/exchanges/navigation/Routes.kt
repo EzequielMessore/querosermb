@@ -8,6 +8,6 @@ object Routes {
 
     @Serializable
     data class ExchangeDetail(
-        val exchangeId: String
+        val exchangeId: String,
     )
 }

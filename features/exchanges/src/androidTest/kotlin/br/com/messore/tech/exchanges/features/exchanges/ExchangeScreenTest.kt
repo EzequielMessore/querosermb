@@ -11,8 +11,8 @@ import br.com.messore.tech.exchanges.features.exchanges.ui.ExchangeScreen
 import br.com.messore.tech.exchanges.features.exchanges.viewmodel.ExchangeUiAction
 import br.com.messore.tech.exchanges.features.exchanges.viewmodel.ExchangeUiState
 import br.com.messore.tech.exchanges.testing.ExchangeDataFactory.createExchangeList
-import kotlin.test.Test
 import org.junit.Rule
+import kotlin.test.Test
 
 class ExchangeScreenTest {
 
@@ -25,13 +25,13 @@ class ExchangeScreenTest {
         val state = ExchangeUiState(
             loading = true,
             exchanges = exchanges,
-            filteredExchanges = exchanges
+            filteredExchanges = exchanges,
         )
 
         composeTestRule.setContent {
             ExchangeScreen(
                 state = state,
-                onAction = {}
+                onAction = {},
             )
         }
 
@@ -49,7 +49,7 @@ class ExchangeScreenTest {
         composeTestRule.setContent {
             ExchangeScreen(
                 state = state,
-                onAction = {}
+                onAction = {},
             )
         }
 
@@ -57,14 +57,14 @@ class ExchangeScreenTest {
         composeTestRule.onNodeWithText("Kraken").assertIsDisplayed()
     }
 
-     @Test
+    @Test
     fun shouldFilterExchangesBasedOnSearchTerm() {
         val exchanges = createExchangeList()
         var searchTerm = "Binance"
         val state = ExchangeUiState(
             loading = false,
             exchanges = exchanges,
-            filteredExchanges = exchanges.filter { it.name.contains(searchTerm, ignoreCase = true) }
+            filteredExchanges = exchanges.filter { it.name.contains(searchTerm, ignoreCase = true) },
         )
 
         composeTestRule.setContent {
@@ -74,7 +74,7 @@ class ExchangeScreenTest {
                     if (action is ExchangeUiAction.OnSearchTermChange) {
                         searchTerm = action.searchTerm
                     }
-                }
+                },
             )
         }
 
@@ -90,7 +90,7 @@ class ExchangeScreenTest {
             loading = false,
             exchanges = exchanges,
             filteredExchanges = exchanges.filter { it.name.contains(searchTerm, ignoreCase = true) },
-            searchTerm = searchTerm
+            searchTerm = searchTerm,
         )
 
         composeTestRule.setContent {
@@ -100,7 +100,7 @@ class ExchangeScreenTest {
                     if (action is ExchangeUiAction.OnSearchTermChange) {
                         searchTerm = action.searchTerm
                     }
-                }
+                },
             )
         }
 

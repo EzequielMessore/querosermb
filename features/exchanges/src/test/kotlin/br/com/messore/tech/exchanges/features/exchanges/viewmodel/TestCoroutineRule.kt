@@ -18,7 +18,7 @@ class TestCoroutineRule : TestRule {
         io = testCoroutineDispatcher,
         main = testCoroutineDispatcher,
         default = testCoroutineDispatcher,
-        unconfined = testCoroutineDispatcher
+        unconfined = testCoroutineDispatcher,
     )
 
     override fun apply(base: Statement, description: Description): Statement = object : Statement() {

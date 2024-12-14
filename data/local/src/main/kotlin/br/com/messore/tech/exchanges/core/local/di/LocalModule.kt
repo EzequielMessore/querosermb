@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import br.com.messore.tech.exchanges.core.local.source.ExchangeDataSourceLocal
 import br.com.messore.tech.exchanges.core.data.source.ExchangeDataSource
+import br.com.messore.tech.exchanges.core.local.source.ExchangeDataSourceLocal
 import org.koin.core.annotation.Module
 import org.koin.core.annotation.Single
 
@@ -22,5 +22,4 @@ class LocalModule {
     fun provideExchangeDataSourceLocal(
         dataStore: DataStore<Preferences>,
     ): ExchangeDataSource.Local = ExchangeDataSourceLocal(dataStore)
-
 }

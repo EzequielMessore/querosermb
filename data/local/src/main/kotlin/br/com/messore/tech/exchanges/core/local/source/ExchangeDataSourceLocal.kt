@@ -7,12 +7,12 @@ import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import br.com.messore.tech.exchanges.core.data.source.ExchangeDataSource
 import br.com.messore.tech.exchanges.core.domain.model.Image
-import java.time.Duration
-import java.time.Instant
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import java.time.Duration
+import java.time.Instant
 
 class ExchangeDataSourceLocal(
     private val dataStore: DataStore<Preferences>,
@@ -33,7 +33,10 @@ class ExchangeDataSourceLocal(
             preferences[cacheTimeKey] ?: 0L
         }.first()
         val currentTime = Instant.now().toEpochMilli()
-        val diffInMinutes = Duration.between(Instant.ofEpochMilli(cacheTime), Instant.ofEpochMilli(currentTime)).toMinutes()
+        val diffInMinutes = Duration.between(
+            Instant.ofEpochMilli(cacheTime),
+            Instant.ofEpochMilli(currentTime),
+        ).toMinutes()
         return diffInMinutes <= 60
     }
 

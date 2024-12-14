@@ -4,15 +4,15 @@ import br.com.messore.tech.exchanges.core.domain.usecase.GetExchangesUseCase
 import br.com.messore.tech.exchanges.testing.ExchangeDataFactory.createExchangeList
 import io.mockk.coEvery
 import io.mockk.mockk
-import kotlin.test.BeforeTest
-import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
+import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ExchangeViewModelTest {
@@ -44,7 +44,7 @@ class ExchangeViewModelTest {
         val expectedStates = listOf(
             ExchangeUiState(),
             ExchangeUiState(loading = true),
-            ExchangeUiState(loading = false, exchanges = exchanges)
+            ExchangeUiState(loading = false, exchanges = exchanges),
         )
 
         assertEquals(expectedStates, states)
@@ -62,7 +62,7 @@ class ExchangeViewModelTest {
         val expectedStates = listOf(
             ExchangeUiState(),
             ExchangeUiState(loading = true),
-            ExchangeUiState(loading = false, hasError = true)
+            ExchangeUiState(loading = false, hasError = true),
         )
 
         assertEquals(expectedStates, states)
@@ -86,7 +86,7 @@ class ExchangeViewModelTest {
             ExchangeUiState(),
             ExchangeUiState(loading = true),
             ExchangeUiState(loading = false, exchanges = exchanges),
-            ExchangeUiState(loading = false, exchanges = exchanges, searchTerm = "BINANCE", filteredExchanges = filteredExchanges)
+            ExchangeUiState(loading = false, exchanges = exchanges, searchTerm = "BINANCE", filteredExchanges = filteredExchanges),
         )
 
         assertEquals(expectedStates, states)
@@ -108,7 +108,7 @@ class ExchangeViewModelTest {
         val expectedStates = listOf(
             ExchangeUiState(),
             ExchangeUiState(loading = true),
-            ExchangeUiState(loading = false, exchanges = exchanges)
+            ExchangeUiState(loading = false, exchanges = exchanges),
         )
 
         assertEquals(expectedStates, states)
@@ -127,7 +127,7 @@ class ExchangeViewModelTest {
         val initialStates = listOf(
             ExchangeUiState(),
             ExchangeUiState(loading = true),
-            ExchangeUiState(loading = false, exchanges = exchanges)
+            ExchangeUiState(loading = false, exchanges = exchanges),
         )
 
         assertEquals(expected = initialStates, actual = states)
@@ -139,7 +139,7 @@ class ExchangeViewModelTest {
             loading = false,
             exchanges = exchanges,
             searchTerm = "binance",
-            filteredExchanges = exchanges.filter { it.name.contains("binance", ignoreCase = true) }
+            filteredExchanges = exchanges.filter { it.name.contains("binance", ignoreCase = true) },
         )
 
         val expectedStatesAfterBinance = initialStates + binanceFilteredState
@@ -153,7 +153,7 @@ class ExchangeViewModelTest {
             loading = false,
             exchanges = exchanges,
             searchTerm = "kraken",
-            filteredExchanges = exchanges.filter { it.name.contains("kraken", ignoreCase = true) }
+            filteredExchanges = exchanges.filter { it.name.contains("kraken", ignoreCase = true) },
         )
 
         val expectedStatesAfterKraken = expectedStatesAfterBinance + krakenFilteredState
@@ -174,7 +174,7 @@ class ExchangeViewModelTest {
         val initialStates = listOf(
             ExchangeUiState(),
             ExchangeUiState(loading = true),
-            ExchangeUiState(loading = false, exchanges = exchanges)
+            ExchangeUiState(loading = false, exchanges = exchanges),
         )
 
         assertEquals(expected = initialStates, actual = states)
@@ -186,7 +186,7 @@ class ExchangeViewModelTest {
             loading = false,
             exchanges = exchanges,
             searchTerm = "binance",
-            filteredExchanges = exchanges.filter { it.name.contains("binance", ignoreCase = true) }
+            filteredExchanges = exchanges.filter { it.name.contains("binance", ignoreCase = true) },
         )
 
         val expectedStatesAfterBinance = initialStates + binanceFilteredState
@@ -200,7 +200,7 @@ class ExchangeViewModelTest {
             loading = false,
             exchanges = exchanges,
             searchTerm = "",
-            filteredExchanges = emptyList()
+            filteredExchanges = emptyList(),
         )
 
         val expectedStatesAfterEmpty = expectedStatesAfterBinance + emptyFilteredState
@@ -223,7 +223,7 @@ class ExchangeViewModelTest {
         val expectedStates = listOf(
             initialState,
             initialState.copy(loading = true),
-            initialState.copy(loading = false, hasError = true)
+            initialState.copy(loading = false, hasError = true),
         )
 
         assertEquals(expected = expectedStates, actual = states)
@@ -236,7 +236,7 @@ class ExchangeViewModelTest {
         val expectedStatesAfterRetry = expectedStates + listOf(
             initialState.copy(hasError = false),
             initialState.copy(loading = true),
-            initialState.copy(loading = false, exchanges = exchanges)
+            initialState.copy(loading = false, exchanges = exchanges),
         )
 
         assertEquals(expected = expectedStatesAfterRetry, actual = states)

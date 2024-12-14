@@ -21,7 +21,7 @@ fun ExchangeRoute(
         ErrorScreen(
             primaryButton = Button(
                 text = "Tentar novamente",
-                onClick = { viewModel.onAction(ExchangeUiAction.Retry) }
+                onClick = { viewModel.onAction(ExchangeUiAction.Retry) },
             ),
         )
         return

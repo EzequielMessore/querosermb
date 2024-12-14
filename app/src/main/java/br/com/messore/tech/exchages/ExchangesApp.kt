@@ -2,9 +2,9 @@ package br.com.messore.tech.exchages
 
 import android.app.Application
 import br.com.messore.tech.exchages.di.AppModule
-import br.com.messore.tech.exchanges.core.local.di.LocalModule
 import br.com.messore.tech.exchanges.core.data.di.DataModule
 import br.com.messore.tech.exchanges.core.domain.di.DomainModule
+import br.com.messore.tech.exchanges.core.local.di.LocalModule
 import br.com.messore.tech.exchanges.core.remote.di.NetworkModule
 import coil.ImageLoader
 import coil.ImageLoaderFactory

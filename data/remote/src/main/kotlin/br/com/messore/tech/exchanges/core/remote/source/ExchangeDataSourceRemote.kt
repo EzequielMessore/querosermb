@@ -1,10 +1,10 @@
 package br.com.messore.tech.exchanges.core.remote.source
 
-import br.com.messore.tech.exchanges.core.remote.service.ExchangeService
 import br.com.messore.tech.exchanges.core.data.source.ExchangeDataSource
 import br.com.messore.tech.exchanges.core.domain.model.Exchange
 import br.com.messore.tech.exchanges.core.domain.model.Image
 import br.com.messore.tech.exchanges.core.remote.mapper.toDomain
+import br.com.messore.tech.exchanges.core.remote.service.ExchangeService
 
 class ExchangeDataSourceRemote(
     private val exchangeService: ExchangeService,

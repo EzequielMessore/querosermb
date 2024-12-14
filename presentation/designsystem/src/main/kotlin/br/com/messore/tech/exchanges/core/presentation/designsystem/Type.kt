@@ -11,15 +11,15 @@ import br.com.messore.tech.exchanges.presentation.designsystem.R
 val DefaultFont = FontFamily(
     Font(
         resId = R.font.baloo_bhai_2,
-        weight = FontWeight.Normal
+        weight = FontWeight.Normal,
     ),
     Font(
         resId = R.font.baloo_bhai_2_medium,
-        weight = FontWeight.Medium
+        weight = FontWeight.Medium,
     ),
     Font(
         resId = R.font.baloo_bhai_2_bold,
-        weight = FontWeight.Bold
+        weight = FontWeight.Bold,
     ),
 )
 
@@ -30,27 +30,27 @@ val Typography = Typography(
         fontWeight = FontWeight.Bold,
         fontSize = 32.sp,
         lineHeight = 40.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.5.sp,
     ),
     labelSmall = TextStyle(
         fontFamily = DefaultFont,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
         lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.5.sp,
     ),
     labelMedium = TextStyle(
         fontFamily = DefaultFont,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
         lineHeight = 20.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.5.sp,
     ),
     labelLarge = TextStyle(
         fontFamily = DefaultFont,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.5.sp,
     ),
 )

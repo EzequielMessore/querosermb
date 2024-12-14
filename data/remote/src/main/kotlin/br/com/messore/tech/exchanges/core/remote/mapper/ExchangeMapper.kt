@@ -1,9 +1,9 @@
 package br.com.messore.tech.exchanges.core.remote.mapper
 
-import br.com.messore.tech.exchanges.core.remote.model.Exchange as ExchangeRemote
 import br.com.messore.tech.exchanges.core.domain.model.Exchange as ExchangeDomain
-import br.com.messore.tech.exchanges.core.remote.model.Image as ImageRemote
 import br.com.messore.tech.exchanges.core.domain.model.Image as ImageDomain
+import br.com.messore.tech.exchanges.core.remote.model.Exchange as ExchangeRemote
+import br.com.messore.tech.exchanges.core.remote.model.Image as ImageRemote
 
 fun ExchangeRemote.toDomain(): ExchangeDomain {
     return ExchangeDomain(

@@ -8,15 +8,15 @@ import br.com.messore.tech.exchanges.navigation.Routes
 import br.com.messore.tech.exchanges.testing.ExchangeDataFactory.createExchangeById
 import io.mockk.coEvery
 import io.mockk.mockk
-import kotlin.test.BeforeTest
-import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
+import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DetailViewModelTest {
@@ -52,7 +52,7 @@ class DetailViewModelTest {
         val expectedStates = listOf(
             DetailUiState(),
             DetailUiState(loading = true),
-            DetailUiState(loading = false, exchange = exchange)
+            DetailUiState(loading = false, exchange = exchange),
         )
 
         assertEquals(expected = expectedStates, actual = states)
@@ -71,7 +71,7 @@ class DetailViewModelTest {
         val expectedStates = listOf(
             DetailUiState(),
             DetailUiState(loading = true),
-            DetailUiState(loading = false, hasError = true)
+            DetailUiState(loading = false, hasError = true),
         )
 
         assertEquals(expected = expectedStates, actual = states)

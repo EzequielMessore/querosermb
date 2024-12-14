@@ -48,7 +48,7 @@ fun Search(
             .testTag(SearchTag)
             .background(
                 color = MaterialTheme.colorScheme.surface,
-                shape = RoundedCornerShape(size = 10.dp)
+                shape = RoundedCornerShape(size = 10.dp),
             ),
         value = value,
         onValueChange = onSearchChanged,
@@ -56,7 +56,7 @@ fun Search(
             Text(
                 text = placeholder,
                 style = MaterialTheme.typography.labelSmall.copy(
-                    color = MaterialTheme.colorScheme.onSurfaceVariant // Cor do placeholder adaptável ao tema
+                    color = MaterialTheme.colorScheme.onSurfaceVariant, // Cor do placeholder adaptável ao tema
                 ),
                 maxLines = 2,
             )
@@ -81,7 +81,6 @@ fun Search(
     )
 }
 
-
 @Preview
 @Composable
 private fun SearchPreview() {
@@ -92,7 +91,7 @@ private fun SearchPreview() {
             Search(
                 value = "texto exemplo",
                 onSearchChanged = {},
-                onClearTextClicked = {}
+                onClearTextClicked = {},
             )
         }
     }

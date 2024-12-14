@@ -9,9 +9,9 @@ import br.com.messore.tech.exchanges.core.domain.model.Exchange
 import br.com.messore.tech.exchanges.core.presentation.designsystem.components.ScreenLoadingTag
 import br.com.messore.tech.exchanges.details.viewmodel.DetailUiState
 import br.com.messore.tech.exchanges.testing.ExchangeDataFactory.createExchangeById
-import kotlin.test.assertEquals
 import org.junit.Rule
 import org.junit.Test
+import kotlin.test.assertEquals
 
 class DetailScreenTest {
 
@@ -37,7 +37,7 @@ class DetailScreenTest {
     fun detailScreenDisplaysExchangeDetails() {
         val state = DetailUiState(
             loading = false,
-            exchange = createExchangeById("BINANCE")
+            exchange = createExchangeById("BINANCE"),
         )
 
         composeTestRule.setContent {
@@ -70,13 +70,13 @@ class DetailScreenTest {
                 volume1HourUsd = 123456789.0,
                 volume1MonthUsd = 123456789.0,
                 image = "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_64/12706e78b23e41e2afd42eecc28d9bbc.png",
-            )
+            ),
         )
 
         composeTestRule.setContent {
             DetailScreen(
                 state = state,
-                onWebsiteClick = { url -> clickedUrl = url }
+                onWebsiteClick = { url -> clickedUrl = url },
             )
         }
 

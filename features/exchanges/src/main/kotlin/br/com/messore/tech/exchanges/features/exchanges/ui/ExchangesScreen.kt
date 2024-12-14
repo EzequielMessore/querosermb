@@ -40,7 +40,7 @@ fun ExchangeScreen(
         loading = state.loading,
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+            .background(MaterialTheme.colorScheme.background),
     ) {
         Search(
             value = state.searchTerm,
@@ -54,7 +54,7 @@ fun ExchangeScreen(
             modifier = Modifier
                 .padding(16.dp)
                 .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.surface)
+                .background(MaterialTheme.colorScheme.surface),
         )
 
         Spacer(Modifier.height(16.dp))
@@ -108,12 +108,12 @@ fun ExchangeItem(
                     text = exchange.name,
                     style = MaterialTheme.typography.labelLarge.copy(
                         fontWeight = FontWeight.Medium,
-                    )
+                    ),
                 )
 
                 Text(
                     text = exchange.exchangeId,
-                    style = MaterialTheme.typography.labelSmall
+                    style = MaterialTheme.typography.labelSmall,
                 )
             }
 
@@ -131,7 +131,7 @@ fun ExchangeItem(
                     style = MaterialTheme.typography.labelMedium.copy(
                         fontWeight = FontWeight.Medium,
                         textAlign = TextAlign.End,
-                    )
+                    ),
                 )
             }
         }
@@ -167,7 +167,7 @@ private fun ExchangeScreenPreview() {
                     ),
                 ),
             ),
-            onAction = {}
+            onAction = {},
         )
     }
 }

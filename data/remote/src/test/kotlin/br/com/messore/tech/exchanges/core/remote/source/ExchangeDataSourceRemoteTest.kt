@@ -1,17 +1,17 @@
 package br.com.messore.tech.exchanges.core.remote.source
 
 import br.com.messore.tech.exchanges.core.domain.model.Exchange
+import br.com.messore.tech.exchanges.core.domain.model.Image
 import br.com.messore.tech.exchanges.core.remote.service.ExchangeService
 import br.com.messore.tech.exchanges.core.remote.source.factory.ExchangeRemoteFactory.createExchangeList
 import br.com.messore.tech.exchanges.core.remote.source.factory.ExchangeRemoteFactory.createImageList
-import br.com.messore.tech.exchanges.core.domain.model.Image
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
+import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
-import kotlinx.coroutines.test.runTest
 
 class ExchangeDataSourceRemoteTest {
     private val exchangeService = mockk<ExchangeService>()

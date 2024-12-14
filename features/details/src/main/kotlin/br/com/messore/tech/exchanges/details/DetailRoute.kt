@@ -24,7 +24,7 @@ fun DetailRoute(
             primaryButton = Button(
                 text = "Fechar",
                 onClick = onBackPressed,
-            )
+            ),
         )
         return
     }
@@ -35,6 +35,6 @@ fun DetailRoute(
         onBackPressed = onBackPressed,
         onWebsiteClick = {
             context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it)))
-        }
+        },
     )
 }

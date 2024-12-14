@@ -20,7 +20,7 @@ private val DarkColorScheme = darkColorScheme(
     onSecondary = CryptoLightGray,
     onTertiary = CryptoLightGray,
     onBackground = CryptoLightGray,
-    onSurface = CryptoLightGray
+    onSurface = CryptoLightGray,
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -33,14 +33,14 @@ private val LightColorScheme = lightColorScheme(
     onSecondary = CryptoDarkGray,
     onTertiary = CryptoDarkGray,
     onBackground = CryptoDarkGray,
-    onSurface = CryptoDarkGray
+    onSurface = CryptoDarkGray,
 )
 
 @Composable
 fun ExchangesTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
@@ -55,6 +55,6 @@ fun ExchangesTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content
+        content = content,
     )
 }

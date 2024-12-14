@@ -24,6 +24,9 @@ composeNavigation = "2.8.5"
 # coroutines
 coroutines = "1.9.0"
 
+# detekt
+detekt = "1.23.1"
+
 # ktor
 ktor = "3.0.1"
 ktorClientMock = "3.0.1"
@@ -72,6 +75,9 @@ androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constr
 
 # coil
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
+# detekt
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 
 # kotlinx
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines"}
@@ -134,6 +140,7 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 
 # internal plugins
 app-android-application = { id = "app.android.application", version = "unspecified" }
