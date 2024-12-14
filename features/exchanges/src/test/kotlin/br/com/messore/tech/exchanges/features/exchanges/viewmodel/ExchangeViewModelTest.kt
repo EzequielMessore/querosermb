@@ -62,7 +62,7 @@ class ExchangeViewModelTest {
         val expectedStates = listOf(
             ExchangeUiState(),
             ExchangeUiState(loading = true),
-            ExchangeUiState(loading = false)
+            ExchangeUiState(loading = false, hasError = true)
         )
 
         assertEquals(expectedStates, states)
@@ -206,6 +206,40 @@ class ExchangeViewModelTest {
         val expectedStatesAfterEmpty = expectedStatesAfterBinance + emptyFilteredState
 
         assertEquals(expected = expectedStatesAfterEmpty, actual = states)
+
+        stateJob.cancel()
+    }
+
+    @Test
+    fun `retry should reload exchanges`() = runTest {
+        val initialState = ExchangeUiState()
+        val exchanges = createExchangeList()
+        coEvery { getExchangesUseCase.invoke() } throws RuntimeException("API Error") andThen exchanges
+
+        val stateJob = launch { viewModel.state.toList(states) }
+        advanceUntilIdle()
+
+        // Initial failure
+        val expectedStates = listOf(
+            initialState,
+            initialState.copy(loading = true),
+            initialState.copy(loading = false, hasError = true)
+        )
+
+        assertEquals(expected = expectedStates, actual = states)
+
+        // Retry action
+        viewModel.onAction(ExchangeUiAction.Retry)
+        advanceUntilIdle()
+
+        // Successful retry
+        val expectedStatesAfterRetry = expectedStates + listOf(
+            initialState.copy(hasError = false),
+            initialState.copy(loading = true),
+            initialState.copy(loading = false, exchanges = exchanges)
+        )
+
+        assertEquals(expected = expectedStatesAfterRetry, actual = states)
 
         stateJob.cancel()
     }

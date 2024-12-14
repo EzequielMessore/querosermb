@@ -6,13 +6,13 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import br.com.messore.tech.exchanges.core.domain.model.Exchange
 import br.com.messore.tech.exchanges.core.presentation.designsystem.components.ScreenLoadingTag
 import br.com.messore.tech.exchanges.features.exchanges.ui.ExchangeScreen
 import br.com.messore.tech.exchanges.features.exchanges.viewmodel.ExchangeUiAction
 import br.com.messore.tech.exchanges.features.exchanges.viewmodel.ExchangeUiState
+import br.com.messore.tech.exchanges.testing.ExchangeDataFactory.createExchangeList
+import kotlin.test.Test
 import org.junit.Rule
-import org.junit.Test
 
 class ExchangeScreenTest {
 
@@ -107,23 +107,5 @@ class ExchangeScreenTest {
         composeTestRule.onNodeWithContentDescription("Close Icon").assertIsDisplayed()
         composeTestRule.onNodeWithContentDescription("Close Icon").performClick()
         assert(searchTerm.isEmpty()) { "O termo de busca não foi limpo!" }
-    }
-
-
-    private fun createExchangeList(): List<Exchange> {
-        return listOf(
-            Exchange(
-                exchangeId = "BINANCE",
-                website = "https://www.binance.com/",
-                name = "Binance",
-                volume1DayUsd = 29497214160.58,
-            ),
-            Exchange(
-                exchangeId = "KRAKEN",
-                website = "https://www.kraken.com/",
-                name = "Kraken",
-                volume1DayUsd = 1966886113.43,
-            ),
-        )
     }
 }
