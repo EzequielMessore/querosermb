@@ -1,52 +1,66 @@
-# Quero ser MB
+# Exchanges App
 
-Somos a maior plataforma de negociação de criptomoedas e ativos alternativos da América Latina, criada para elevar a experiência de quem vivencia essa revolução, entregando o melhor serviço de negociação de ativos alternativos, com liberdade, segurança e liquidez. Sendo assim, nós existimos para mudar a maneira como as pessoas lidam com o dinheiro através da tecnologia.
+## Visão Geral
 
-### Objetivo
+O Exchanges App é um aplicativo Android baseado em Kotlin.
+O projeto é estruturado usando uma arquitetura modular para garantir escalabilidade, manutenibilidade e facilidade de teste.
 
-O objetivo deste desafio é entender seus conhecimentos, estilo de programação e como você resolve desafios técnicos.
+## Estrutura do Projeto
 
-### Projeto
-Criar um aplicativo para consultar a [coinapi.io](https://docs.coinapi.io/?shell#list-all-exchanges-get) e trazer as exchanges em forma de lista.
+O projeto é dividido em vários módulos, cada um responsável por um aspecto específico do aplicativo:
 
-### Credencial da API
-Será necessária uma [API_KEY](https://www.coinapi.io/get-free-api-key?product_id=market-data-api) para utilizar a API.
+- **app**: O módulo principal do aplicativo contendo o ponto de entrada e a configuração geral.
+- **build-logic**: Contém plugins Gradle personalizados e configurações de lógica de build.
+- **core**: Contém funcionalidades e utilitários principais compartilhados em todo o aplicativo.
+  - **core:view-model**: Classes e utilitários relacionados ao ViewModel.
+  - **core:navigation**: Classes e utilitários relacionados à navegação.
+  - **core:testing**: Utilitários de teste e classes base.
+- **data**: Gerencia fontes de dados, incluindo manipulação de dados locais e remotos.
+  - **data:local**: Fontes de dados locais, como bancos de dados.
+  - **data:remote**: Fontes de dados remotos, como APIs.
+- **domain**: Contém a lógica de negócios e casos de uso.
+- **presentation**: Gerencia os componentes e temas da interface do usuário.
+  - **presentation:designsystem**: Componentes de UI reutilizáveis e elementos do sistema de design.
 
+## Requisitos Básicos
 
-### Features
--   **Tela de listagem:**
-    - Exibir, pelo menos, os campos: `name`, `exchange_id` e `volume_1day_usd`
-    - Ao tocar em um item deve ser exibida a tela de detalhes.
--   **Tela de detalhe:**
-    - Exibe os detalhes da exchange.
+Para rodar o aplicativo, você precisará dos seguintes requisitos:
 
-### Requisitos Técnicos
-|      Android       |     iOS            |
-| ------------------ | ------------------ |
-| Kotlin             |  Swift 5+          |
-| Compose            |  View Code         |
-| Testes unitários   |  Testes unitários  |
-| Testes de UI       |  Testes de UI      |
+- **JDK 17**
+- **Android Studio** (versão recomendada: Android Studio Ladybug | 2024.2.1 Patch 3)
+- **Gradle 8.9** ou superior
+- **API Key da CoinAPI** (obtenha uma em [CoinAPI Documentation](https://docs.coinapi.io/?shell#list-all-exchanges-get))
 
-#### Arquitetura
+## Como Rodar o Aplicativo
 
-Sinta-se à vontade para utilizar a arquitetura que melhor atender o projeto proposto. Aqui no Mercado Bitcoin utilizamos 
+1. Clone o repositório:
+   ```sh
+   git clone git@github.com:EzequielMessore/querosermb.git
+   ```
+2. Abra o projeto no Android Studio.
+3. Sincronize o projeto com os arquivos Gradle.
+4. Conecte um dispositivo físico ou inicie um emulador.
+5. Compile e execute o aplicativo.
 
-|      Android       |     iOS            |
-| ------------------ | ------------------ |
-| MVVM com Clean     |  MVVM-C e VIP-C    | 
+## Como Configurar a API Key
 
-### Requisitos não funcionais
+1. Abra o arquivo `local.properties` localizado no diretório raiz do projeto.
+2. Adicione sua API key ao arquivo:
+   ```ini
+   API_KEY=your_api_key_here
+   ```
+3. O aplicativo usará automaticamente essa API key durante a execução.
 
-- UI e UX fluída seguindo os padrões da plataforma.
-- A aplicação deve ser resiliente, tratamento de erros são bem-vindos.
-- Considerar escalabilidade.
+## Como Rodar os Testes
 
-### Prazo
-A partir do envio do desafio ao candidato por e-mail, o prazo de retorno é de 7 dias corridos.
+Para rodar os testes unitários e de UI, siga os passos abaixo:
 
-### Processo de Submissão
-O candidato deverá enviar a solução por e-mail contendo todas instruções necessárias para executá-lo, em formato .zip.
-
-### IMPORTANTE
-Esse código não será usado em nenhuma hipótese para qualquer fim a não ser o de avaliação de conhecimentos técnicos.
+1. Abra o projeto no Android Studio.
+2. Para rodar todos os testes, use o seguinte comando no terminal:
+   ```sh
+   ./gradlew testDebugUnitTest
+   ```
+3. Para rodar testes de UI (instrumentation tests), use o seguinte comando:
+   ```sh
+   ./gradlew connectedAndroidTest
+   ```
