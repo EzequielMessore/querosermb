@@ -51,6 +51,8 @@ dependencies {
     implementation(projects.core.domain)
     implementation(projects.core.presentation.designsystem)
     implementation(projects.core.viewModel)
+    implementation(projects.core.navigation)
 
     implementation(projects.features.exchanges)
+    implementation(projects.features.details)
 }

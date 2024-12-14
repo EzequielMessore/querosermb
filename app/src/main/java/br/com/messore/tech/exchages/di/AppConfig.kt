@@ -14,7 +14,7 @@ class AppConfig : ApiConfig {
 }
 
 @Module
-@ComponentScan("br.com.messore.tech.exchages")
+@ComponentScan("br.com.messore.tech.exchanges")
 class AppModule {
     @Single
     fun providesDispatcherProvider(): DispatchersProvider = DispatchersProvider()

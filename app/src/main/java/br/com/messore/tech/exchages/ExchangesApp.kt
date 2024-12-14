@@ -47,7 +47,7 @@ class ExchangesApp : Application(), ImageLoaderFactory {
             }
             .diskCache {
                 DiskCache.Builder()
-                    .directory(cacheDir.resolve("exchanges_image_cache"))
+                    .directory(cacheDir.resolve("image_cache"))
                     .maxSizePercent(0.10)
                     .build()
             }
