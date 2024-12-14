@@ -7,6 +7,7 @@ import br.com.messore.tech.exchages.convention.extentions.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.project
 
 class FeaturePlugin : Plugin<Project> {
@@ -22,6 +23,7 @@ class FeaturePlugin : Plugin<Project> {
             dependencies {
                 "implementation"(project(":core:domain"))
                 "implementation"(project(":core:view-model"))
+                "implementation"(project(":core:navigation"))
                 "implementation"(project(":core:presentation:designsystem"))
                 "implementation"(libs.library("ktor-serialization-kotlinx-json"))
 
@@ -29,6 +31,10 @@ class FeaturePlugin : Plugin<Project> {
                 "implementation"(libs.bundle("koin-android"))
                 "ksp"(libs.findLibrary("koin-ksp-compiler").get())
 
+                "testImplementation"(project(":core:testing"))
+
+                "androidTestImplementation"(kotlin("test"))
+                "androidTestImplementation"(project(":core:testing"))
                 "androidTestImplementation"(libs.library("testing-ui-test-junit4"))
             }
             composeDependencies()
