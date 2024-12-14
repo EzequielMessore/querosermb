@@ -1,4 +1,4 @@
-# Exchanges App
+# Exchanges App ![Detekt and Tests](https://github.com/EzequielMessore/querosermb/actions/workflows/check.yml/badge.svg)
 
 ## Visão Geral
 
