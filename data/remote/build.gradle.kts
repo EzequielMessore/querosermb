@@ -4,6 +4,6 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.core.data.data)
+    implementation(projects.data.data)
     implementation(projects.core.domain)
 }

@@ -26,9 +26,12 @@ rootProject.name = "Exchages"
 include(":app")
 
 include(
-    ":core:data:data",
-    ":core:data:local",
-    ":core:data:remote",
+    ":data:data",
+    ":data:local",
+    ":data:remote",
+)
+
+include(
     ":core:domain",
     ":core:navigation",
     ":core:presentation:designsystem",

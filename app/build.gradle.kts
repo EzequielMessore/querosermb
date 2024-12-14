@@ -45,9 +45,9 @@ dependencies {
 
     implementation(libs.timber)
 
-    implementation(projects.core.data.data)
-    implementation(projects.core.data.local)
-    implementation(projects.core.data.remote)
+    implementation(projects.data.data)
+    implementation(projects.data.local)
+    implementation(projects.data.remote)
     implementation(projects.core.domain)
     implementation(projects.core.presentation.designsystem)
     implementation(projects.core.viewModel)
