@@ -29,12 +29,14 @@ include(
     ":core:data:data",
     ":core:data:local",
     ":core:data:remote",
-    ":core:presentation:designsystem",
     ":core:domain",
+    ":core:navigation",
+    ":core:presentation:designsystem",
     ":core:view-model",
     ":core:testing",
 )
 
 include(
+    ":features:details",
     ":features:exchanges",
 )

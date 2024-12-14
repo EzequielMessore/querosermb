@@ -12,6 +12,7 @@ activityCompose = "1.9.3"
 composeBom = "2024.12.01"
 lifecycleRuntimeKtx = "2.8.7"
 androidxDatastore = "1.1.1"
+androidxConstraintLayoutCompose = "1.1.0"
 androidxLifecycleRuntimeCompose = "2.8.7"
 
 # coil
@@ -67,6 +68,7 @@ androidx-compose-navigation = { group = "androidx.navigation", name = "navigatio
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-lifecycle-viewModelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidxLifecycleRuntimeCompose" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidxDatastore" }
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "androidxConstraintLayoutCompose" }
 
 # coil
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
@@ -100,7 +102,6 @@ testing-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 testing-ktor = { module = "io.ktor:ktor-client-mock", version.ref = "ktorClientMock" }
 testing-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 testing-koin = { group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
-testing-turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 testing-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "uiTestJunit4" }
 
 # Gradle
